@@ -2,6 +2,10 @@
 
 ## Integrantes: Juan Jose Vasquez Gomez, Maria Fernanda Alvarez
 
+## 🎥 **Video:** 
+
+![Prueba NsLookup desde el cliente](capturas/PruebaNsLookup.jpeg)
+
 ## 📌 Introducción
 
 Este proyecto consiste en el diseño, implementación y prueba de un servidor DNS utilizando el servicio BIND en una máquina virtual con Ubuntu Studio, ejecutándose en VirtualBox (host Windows 11). La validación del funcionamiento se realizó desde una máquina cliente con Windows, ejecutándose en otro host (Mac) a través de UTM. Ambas máquinas se conectaron por medio de la red virtual privada Tailscale, permitiendo pruebas realistas de resolución de nombres en entornos distribuidos.
@@ -29,18 +33,41 @@ El objetivo principal fue configurar el servidor DNS con zonas directa e inversa
 2. **Configuración de archivos:**
    - `named.conf.local`: Definición de zonas directa e inversa.
 
-   ![Configuración de red VirtualBox](capturas/red-virtualbox.png)
+   ![Configuración Local](capturas/ConfiguracionLocal.jpeg)
      
    - Archivos de zona directa (`db.grupo1.local`) e inversa (`db.100.127.211`) y (`db.10.10.10`)  creados en `/etc/bind/zones/`.
+  
+   ![Zona Directa Grupo1.Local](capturas/ZonaDirecta.jpeg)
+   ![Zona Inversa db.10.10.10.10](capturas/ZonaInversa1.jpeg)
+
+   - Zona inversa verificada para devolver el nombre `servidor.grupo1.local`.
+     
+   ![Zona Inversa db.100.127.211](capturas/ZonaInversa2.jpeg)
 
 3. **Configuración de red del cliente y del servidor:**
    - Uso de IP Tailscale del servidor como DNS manual en configuración de red del cliente Windows.
+  
+   ![Configuración Red Ubuntu (Servidor)](capturas/RedUbuntuVM.jpeg)
+   ![Configuración Red Windows (Cliente)](capturas/RedWindowsVM.jpeg)
+   ![Configuración Red Tailscale](capturas/RedTailscale.jpeg)
 
-4. **Validación:**
+4. **Permisos y Chequeos de funcionamiento**
+
+   - Asignación de permisos
+
+   ![Permisos](capturas/Permisos1.jpeg)
+
+   - Chequeos de funcionamiento
+
+   ![Chequeos](capturas/Chequeos.jpeg)
+
+6. **Validación:**
    - Pruebas de resolución con `nslookup` y `dig`.
-   - Zona inversa verificada para devolver el nombre `servidor.grupo1.local`.
+   
+   ![Prueba NsLookup desde el cliente](capturas/PruebaNsLookup.jpeg)
+   ![Prueba Dig desde el mismo servidor](capturas/PruebaDig.jpeg)
 
-5. **(Opcional) Modo chroot (modo jaula):**
+7. **(Opcional) Modo chroot (modo jaula):**
    - Se intentó la configuración en `/var/named/chroot`, pero se descartó por conflictos de permisos y errores al iniciar el servicio.
 
 ---
@@ -83,9 +110,3 @@ Este ejercicio refuerza habilidades esenciales en redes, seguridad y administrac
 │ │ └── db.100.127.211.76
 ├── capturas/
 └── README.md
-
-🎥 **Video:** 
-- El entorno de trabajo
-- Configuración de red
-- Archivos de configuración
-- Pruebas exitosas de resolución DNS
