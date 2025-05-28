@@ -35,23 +35,34 @@ El objetivo principal fue configurar el servidor DNS con zonas directa e inversa
 
    ![Configuración Local](capturas/ConfiguracionLocal.jpeg)
      
-   - Archivos de zona directa (`db.grupo1.local`) e inversa (`db.100.127.211`) y (`db.10.10.10`)  creados en `/etc/bind/zones/`.
+   - Archivo de zona directa (`db.grupo1.local`) creado en `/etc/bind/zones/`.
   
    ![Zona Directa Grupo1.Local](capturas/ZonaDirecta.jpeg)
+
+   - Zona inversa (`db.10.10.10`)
+   
    ![Zona Inversa db.10.10.10.10](capturas/ZonaInversa1.jpeg)
 
-   - Zona inversa verificada para devolver el nombre `servidor.grupo1.local`.
+   - Zona inversa (`db.100.127.211`) verificada para devolver el nombre `servidor.grupo1.local`.
      
    ![Zona Inversa db.100.127.211](capturas/ZonaInversa2.jpeg)
 
-3. **Configuración de red del cliente y del servidor:**
+4. **Configuración de red del cliente y del servidor:**
    - Uso de IP Tailscale del servidor como DNS manual en configuración de red del cliente Windows.
-  
+
+   - Configuración Red Ubuntu (Servidor)
+     
    ![Configuración Red Ubuntu (Servidor)](capturas/RedUbuntuVM.jpeg)
+
+   - Configuración Red Windows (Cliente)
+     
    ![Configuración Red Windows (Cliente)](capturas/RedWindowsVM.jpeg)
+
+   - Configuración Red Tailscale
+     
    ![Configuración Red Tailscale](capturas/RedTailscale.jpeg)
 
-4. **Permisos y Chequeos de funcionamiento**
+6. **Permisos y Chequeos de funcionamiento**
 
    - Asignación de permisos
 
@@ -61,13 +72,13 @@ El objetivo principal fue configurar el servidor DNS con zonas directa e inversa
 
    ![Chequeos](capturas/Chequeos.jpeg)
 
-6. **Validación:**
+7. **Validación:**
    - Pruebas de resolución con `nslookup` y `dig`.
    
    ![Prueba NsLookup desde el cliente](capturas/PruebaNsLookup.jpeg)
    ![Prueba Dig desde el mismo servidor](capturas/PruebaDig.jpeg)
 
-7. **(Opcional) Modo chroot (modo jaula):**
+8. **(Opcional) Modo chroot (modo jaula):**
    - Se intentó la configuración en `/var/named/chroot`, pero se descartó por conflictos de permisos y errores al iniciar el servicio.
 
 ---
@@ -99,14 +110,3 @@ Además, el uso de herramientas como Tailscale facilitó una red privada funcion
 Este ejercicio refuerza habilidades esenciales en redes, seguridad y administración de servicios Linux, y demuestra cómo integrar múltiples tecnologías para lograr una solución funcional en entornos reales o simulados.
 
 ---
-
-📁 **Estructura del repositorio:**
-
-├── bind-config/
-│ ├── named.conf.local
-│ ├── zones/
-│ │ ├── db.grupo1.local
-│ │ ├── db.10.10.10
-│ │ └── db.100.127.211.76
-├── capturas/
-└── README.md
