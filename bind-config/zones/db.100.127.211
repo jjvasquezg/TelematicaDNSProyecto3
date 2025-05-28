@@ -1,0 +1,10 @@
+$TTL    604800
+@       IN      SOA     servidor.grupo1.local. admin.grupo1.local. (
+                              3         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+        IN      NS      servidor.grupo1.local.
+76      IN      PTR     servidor.grupo1.local.
