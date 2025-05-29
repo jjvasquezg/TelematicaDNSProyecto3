@@ -73,12 +73,16 @@ El objetivo principal fue configurar el servidor DNS con zonas directa e inversa
    ![Chequeos](capturas/Chequeos.jpeg)
 
 7. **Validación:**
-   - Pruebas de resolución con `nslookup` y `dig`.
+   - Pruebas de resolución con `nslookup`.
    
    ![Prueba NsLookup desde el cliente](capturas/PruebaNsLookup.jpeg)
+   ![Prueba NsLookup desde el cliente](capturas/PruebaNsLookup2.jpeg)
+   ![Prueba NsLookup desde el cliente](capturas/PruebaNsLookup3.jpeg)
+
+   
    ![Prueba Dig desde el mismo servidor](capturas/PruebaDig.jpeg)
 
-8. **(Opcional) Modo chroot (modo jaula):**
+9. **(Opcional) Modo chroot (modo jaula):**
    - Se intentó la configuración en `/var/named/chroot`, pero se descartó por conflictos de permisos y errores al iniciar el servicio.
 
 ---
