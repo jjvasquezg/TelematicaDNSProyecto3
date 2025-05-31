@@ -4,7 +4,7 @@
 
 ## 🎥 **Video:** 
 
-![Video de Pruebas](https://drive.google.com/file/d/1X_92MPU7PNoTUtUmYGrECR_-WkV-Jwus/view?usp=sharing)
+- [Video de Pruebas](https://drive.google.com/file/d/1X_92MPU7PNoTUtUmYGrECR_-WkV-Jwus/view?usp=sharing)
 
 ## 📌 Introducción
 
