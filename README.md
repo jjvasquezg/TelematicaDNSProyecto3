@@ -23,7 +23,8 @@ El objetivo principal fue configurar el servidor DNS con zonas directa e inversa
 - **Red privada virtual:** Tailscale
 - **Servicio DNS:** BIND9
 - **Zona simulada:** `grupo1.local`
-- **Zona inversa:** basada en IP Tailscale `100.127.211.76` → zona `76.211.127.100.in-addr.arpa`
+- **Zona inversa:** basada en IP Local Servidor `10.10.10.1` → zona `10.10.10.in-addr.arpa`
+- **Zona inversa:** basada en IP Tailscale `100.127.211.76` → zona `211.127.100.in-addr.arpa`
 
 ### Pasos realizados
 
@@ -102,7 +103,7 @@ El objetivo principal fue configurar el servidor DNS con zonas directa e inversa
 
 - Instalación y configuración completa de BIND.
 - Archivo de zona directa funcional (`grupo1.local`).
-- Archivo de zona inversa funcional para IP de Tailscale.
+- Archivos de zona inversa funcionales (También para IP de Tailscale).
 - Validación completa desde una máquina remota mediante `nslookup`.
 - Conectividad funcional usando Tailscale entre dos redes distintas.
 - Documentación en video y capturas.
