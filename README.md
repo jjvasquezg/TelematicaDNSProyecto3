@@ -83,7 +83,7 @@ El objetivo principal fue configurar el servidor DNS con zonas directa e inversa
    ![Prueba NsLookup desde el cliente](capturas/PruebaNsLookup.jpeg)
    ![Prueba NsLookup desde el cliente](capturas/PruebaNsLookup3.png)
    ![Prueba NsLookup desde el cliente](capturas/PruebaNsLookup2.png)
-   ![Prueba NsLookup desde el cliente](capturas/PruebaNsLookup4.png)
+   ![Prueba NsLookup desde el cliente](capturas/PruebaNsLookup4.jpeg)
 
    - Pruebas de resolución externas con `nslookup` y `dig`.
    
