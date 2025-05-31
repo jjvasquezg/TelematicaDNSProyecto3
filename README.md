@@ -31,9 +31,14 @@ El objetivo principal fue configurar el servidor DNS con zonas directa e inversa
    - `sudo apt install bind9 bind9utils bind9-doc`
 
 2. **Configuración de archivos:**
+   
    - `named.conf.local`: Definición de zonas directa e inversa.
 
    ![Configuración Local](capturas/ConfiguracionLocal.jpeg)
+
+   - `named.conf.options`: Resolucion de nombres y direcciones externos, consultas recursivas, etc.
+
+   ![Configuración Local](capturas/ConfiguracionOptions.jpeg)
      
    - Archivo de zona directa (`db.grupo1.local`) creado en `/etc/bind/zones/`.
   
@@ -73,14 +78,18 @@ El objetivo principal fue configurar el servidor DNS con zonas directa e inversa
    ![Chequeos](capturas/Chequeos.jpeg)
 
 7. **Validación:**
-   - Pruebas de resolución con `nslookup`.
+   - Pruebas de resolución internas con `nslookup` y `dig`.
    
    ![Prueba NsLookup desde el cliente](capturas/PruebaNsLookup.jpeg)
    ![Prueba NsLookup desde el cliente](capturas/PruebaNsLookup3.png)
    ![Prueba NsLookup desde el cliente](capturas/PruebaNsLookup2.png)
+   ![Prueba NsLookup desde el cliente](capturas/PruebaNsLookup4.jpeg)
 
+   - Pruebas de resolución externas con `nslookup` y `dig`.
    
    ![Prueba Dig desde el mismo servidor](capturas/PruebaDig.jpeg)
+   ![Prueba Dig desde el mismo servidor](capturas/PruebaDig2.jpeg)
+   
 
 9. **(Opcional) Modo chroot (modo jaula):**
    - Se intentó la configuración en `/var/named/chroot`, pero se descartó por conflictos de permisos y errores al iniciar el servicio.
